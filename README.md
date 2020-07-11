@@ -1,5 +1,7 @@
 # udagram_microservices
 
+CI/CD deployment of Udagram refatored as microservices. I heard Jenkins X is now more used than direclty the deployment over the cluster. Is it good idea for me to propose the project with Jenkins X? I tried to propose in this way as I'm already familiar to do teh cicd pipeline the manual way, and I think Jenkins X is a good way for making the project stand out, isn't it?  
+
 ***Credits***
 Udacity Cloud Developer Nanodegree Program
 
@@ -90,13 +92,19 @@ Create an AWS S3 bucket. Set the config values for environment variables prefixe
 
 The motivation of this project is to understand how to turn a "monolith" software into services. To do so it is taken the rest api and approach it as two separate projects running in two different docker instances, and fianlly as two containers in a kubernetes cluster.
 
+First, I started approaching this CI/CD pipeline as follows.
+
+![cicd1](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/cicd1.png)
+
+Then, asking to some friends they told they are now using Jenkins X beacuse it allows converging every step in git: so I propose to project with Jenkins X as I thought I will be appreciated by mentors 
+
 # What I did: rubric
 
 Containers and Microservices
 
 - [x] ***Divide an application into microservices***: /feed and /user backends are separated into independent projects.
 
-First is checked that the two services work in local.
+First is checked that the two services work in local from its docker image. It is used cloud 9 as when I
 
 - [x] ***Build and run a container image using Docker***: Project includes Dockerfiles to successfully create Docker images for /feed, /user backends, project frontend, and reverse proxy. Screenshot of DockerHub shows the images.
 
@@ -118,7 +126,7 @@ Service Orchestration with Kubernetes
 
 - [x] ***Configure scaling and self-healing for each service***: 
 
-- Kubernetes services are replicated. At least one of the Kubernetes services has replicas: defined with a value greater than 1 in itsdeployment.yml file.
+- Kubernetes services are replicated. At least one of the Kubernetes services has replicas: defined with a value greater than 1 in its deployment.yml file.
 
 - Screenshot of Kubernetes cluster of command kubectl describe hpa has autoscaling configured with CPU metrics.
 
