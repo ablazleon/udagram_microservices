@@ -96,6 +96,8 @@ Containers and Microservices
 
 - [x] ***Divide an application into microservices***: /feed and /user backends are separated into independent projects.
 
+First is checked that the two services work in local.
+
 - [x] ***Build and run a container image using Docker***: Project includes Dockerfiles to successfully create Docker images for /feed, /user backends, project frontend, and reverse proxy. Screenshot of DockerHub shows the images.
 
 Independent Releases and Deployments
