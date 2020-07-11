@@ -98,6 +98,64 @@ First, I started approaching this CI/CD pipeline as follows.
 
 Then, asking to some friends they told they are now using Jenkins X beacuse it allows converging every step in git: so I propose to project with Jenkins X as I thought I will be appreciated by mentors 
 
+![cicd2](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/cicd2.png)
+
+### Steps
+
+#### 1 Set up cluster
+#### 2 Set up the service
+#### 3 Develop the service
+
+#### 1 Set up cluster
+
+From https://jenkins-x.io/docs/install-setup/install-binarls, jx is installed.
+
+Then, I created an eks cluster, but as the costs grows so quickly I decided to choose instead gke.
+
+    ```bash
+    x create cluster gke --cluster-name xxxxx --skip-installation
+    ```
+
+Then it is copied a jx-requirments.yml and modified it accordingly.
+
+    ```bash
+    jx boot -r  jx-requirements.yml
+    ```
+
+To check it works, it is created a quickstart. Then it is checked that the reverse proxy is a service.
+
+    ```bash
+    kubectl get svc
+    ```
+
+#### 2 Set up the service
+
+Then, both the v0 microservices are imported and took to production.
+
+    ```bash
+    jx import udagram-api-feed --git-public
+
+    jx get app
+
+    jx import udagram-frontend --git-public
+
+    jx get app
+
+    ```
+
+
+In this photo it is shown how both microservices work.
+
+promote
+
+#### 3 Develop the service
+
+From there it is refactored the microservices in dev enviroment, importing the microservice feed and removing the users functionality from the the other microservice.
+
+Here it is icnlude that thiese works.
+
+THen it is included a .travis to run the steps out of the cluster
+
 # What I did: rubric
 
 Containers and Microservices
