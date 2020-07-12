@@ -122,7 +122,13 @@ Then it is copied a jx-requirments.yml and modified it accordingly.
     jx boot -r  jx-requirements.yml
     ```
 
-To check it works, it is created a quickstart. Then it is checked that the reverse proxy is a service.
+To check it works, it is created a quickstart. 
+
+![Node example](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/node-example.png)
+
+Then it is checked that the reverse proxy is a service.
+
+![nginex-reverserpoxy](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/nginex-reverserpoxy.png)
 
     ```bash
     kubectl get svc
