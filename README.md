@@ -113,28 +113,24 @@ From https://jenkins-x.io/docs/install-setup/install-binarls, jx is installed.
 Then, I created an eks cluster, but as the costs grows so quickly I decided to choose instead gke.
 
     ```bash
-    x create cluster gke --cluster-name xxxxx --skip-installation
+    jx create cluster gke --cluster-name mycluster --skip-installation --skip-login=true
     ```
 
 Then it is copied a jx-requirments.yml and modified it accordingly.
 
     ```bash
-    jx boot -r  jx-requirements.yml
+    jx boot 
     ```
 
-To check it works, it is created a quickstart. 
-
-![Node example](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/node-example.png)
-
-Then it is checked that the reverse proxy is a service.
-
-![nginex-reverserpoxy](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/nginex-reverserpoxy.png)
+To check it works, it is created a quickstart. Then it is checked that the reverse proxy is a service.
 
     ```bash
     kubectl get svc
     ```
 
 #### 2 Set up the service
+
+First, both services are deployed independently.
 
 Then, both the v0 microservices are imported and took to production.
 
