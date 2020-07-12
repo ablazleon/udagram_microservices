@@ -146,7 +146,10 @@ Then, both the v0 microservices are imported and took to production.
 
 In this photo it is shown how both microservices work.
 
-promote
+
+    ```bash
+    jx promote ---env production
+    ```
 
 #### 3 Develop the service
 
