@@ -130,7 +130,10 @@ To check it works, it is created a quickstart. Then it is checked that the rever
 
 #### 2 Set up the service
 
+<<<<<<< HEAD
 First, both services are deployed independently.
+=======
+>>>>>>> 21c0b38bc97363d537d4046080c1655ff9f23630
 
 Then, both the v0 microservices are imported and took to production.
 
