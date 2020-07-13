@@ -167,12 +167,21 @@ Containers and Microservices
 
 - [x] ***Divide an application into microservices***: /feed and /user backends are separated into independent projects.
 
+It is shown how the three services are deployed succesfully.
+
+![Local](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/Local.png)
 
 - [x] ***Build and run a container image using Docker***: Project includes Dockerfiles to successfully create Docker images for /feed, /user backends, project frontend, and reverse proxy. Screenshot of DockerHub shows the images.
+
+
 
 Independent Releases and Deployments
 
 - [x] ***Use Travis to build a CI/CD pipeline***: Project includes a .travis.yml file. Screenshot of the Travis CI interface shows a successful build and deploy job.
+
+This image shows that in the travis dashboard the job is done succesfully.
+
+![Travis]https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/Travis.png
 
 Service Orchestration with Kubernetes
 
@@ -185,6 +194,10 @@ Service Orchestration with Kubernetes
 - The output of kubectl describe services does not expose any sensitive strings such as database passwords.
 
 - [x] ***Use a reverse proxy to direct requests to the appropriate backend***: Screenshot of Kubernetes services shows a reverse proxy
+
+It is showed the serverse proxy.
+
+![Reverse proxy](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/nginex-reverserpoxy.png)
 
 - [x] ***Configure scaling and self-healing for each service***: 
 
