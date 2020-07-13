@@ -130,10 +130,7 @@ To check it works, it is created a quickstart. Then it is checked that the rever
 
 #### 2 Set up the service
 
-<<<<<<< HEAD
 First, both services are deployed independently.
-=======
->>>>>>> 21c0b38bc97363d537d4046080c1655ff9f23630
 
 Then, both the v0 microservices are imported and took to production.
 
@@ -170,7 +167,6 @@ Containers and Microservices
 
 - [x] ***Divide an application into microservices***: /feed and /user backends are separated into independent projects.
 
-First is checked that the two services work in local from its docker image. It is used cloud 9 as when I
 
 - [x] ***Build and run a container image using Docker***: Project includes Dockerfiles to successfully create Docker images for /feed, /user backends, project frontend, and reverse proxy. Screenshot of DockerHub shows the images.
 
