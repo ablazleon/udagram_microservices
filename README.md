@@ -177,7 +177,7 @@ Independent Releases and Deployments
 
 This image shows that in the travis dashboard the job is done succesfully.
 
-![Travis]https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/Travis.png
+![Travis](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/Travis.png)
 
 Service Orchestration with Kubernetes
 
