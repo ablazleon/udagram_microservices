@@ -135,16 +135,12 @@ First, both services are deployed independently.
 Then, both the v0 microservices are imported and took to production.
 
     ```bash
-    jx import udagram-api-feed --git-public
-
+    jx import --url https://github.com/ablazleon/udagram-api-users.git
+    jx import --url https://github.com/ablazleon/udagram-api-feed.git
+    jx import --url https://github.com/ablazleon/udagram-frontend.git
     jx get app
-
-    jx import udagram-frontend --git-public
-
-    jx get app
-
     ```
-
+It is config the env values in the dev environmanet in a values.yml file
 
 In this photo it is shown how both microservices work.
 
