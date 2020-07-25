@@ -1,6 +1,6 @@
 # udagram_microservices
 
-CI/CD deployment of Udagram refatored as microservices. I heard Jenkins X is now more used than direclty the deployment over the cluster. Is it good idea for me to propose the project with Jenkins X? I tried to propose in this way as I'm already familiar to do teh cicd pipeline the manual way, and I think Jenkins X is a good way for making the project stand out, isn't it?  
+CI/CD deployment of Udagram refactored as microservices. 
 
 ***Credits***
 Udacity Cloud Developer Nanodegree Program
@@ -96,66 +96,9 @@ First, I started approaching this CI/CD pipeline as follows.
 
 ![cicd1](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/cicd1.png)
 
-Then, asking to some friends they told they are now using Jenkins X beacuse it allows converging every step in git: so I propose to project with Jenkins X as I thought I will be appreciated by mentors 
+Then, asking to some friends they told they are now using Jenkins X beacuse it allows converging every step in git: so I propose to project with Jenkins X as I thought I will be appreciated by mentors. But then I found, there were some problems related envrionemtn varialbes in jenkins X, so I first decided trying wiht kubernetes deployment alone.
 
 ![cicd2](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/cicd2.png)
-
-### Steps
-
-#### 1 Set up cluster
-#### 2 Set up the service
-#### 3 Develop the service
-
-#### 1 Set up cluster
-
-From https://jenkins-x.io/docs/install-setup/install-binarls, jx is installed.
-
-Then, I created an eks cluster, but as the costs grows so quickly I decided to choose instead gke.
-
-    ```bash
-    jx create cluster gke --cluster-name mycluster --skip-installation --skip-login=true
-    ```
-
-Then it is copied a jx-requirments.yml and modified it accordingly.
-
-    ```bash
-    jx boot 
-    ```
-
-To check it works, it is created a quickstart. Then it is checked that the reverse proxy is a service.
-
-    ```bash
-    kubectl get svc
-    ```
-
-#### 2 Set up the service
-
-First, both services are deployed independently.
-
-Then, both the v0 microservices are imported and took to production.
-
-    ```bash
-    jx import --url https://github.com/ablazleon/udagram-api-users.git
-    jx import --url https://github.com/ablazleon/udagram-api-feed.git
-    jx import --url https://github.com/ablazleon/udagram-frontend.git
-    jx get app
-    ```
-It is config the env values in the dev environmanet in a values.yml file
-
-In this photo it is shown how both microservices work.
-
-
-    ```bash
-    jx promote ---env production
-    ```
-
-#### 3 Develop the service
-
-From there it is refactored the microservices in dev enviroment, importing the microservice feed and removing the users functionality from the the other microservice.
-
-Here it is icnlude that thiese works.
-
-THen it is included a .travis to run the steps out of the cluster
 
 # What I did: rubric
 
