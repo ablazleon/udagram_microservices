@@ -129,6 +129,8 @@ Service Orchestration with Kubernetes
 
 - [x] ***Deploy microservices using a Kubernetes cluster on AWS***: 
 
+![Used eksctl]
+
 - A screenshots of kubectl commands show the Frontend and API projects deployed in Kubernetes.
 
 - The output of kubectl get pods indicates that the pods are running successfully with the STATUS value Running.
