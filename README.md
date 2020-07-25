@@ -1,5 +1,9 @@
 # udagram_microservices
 
+2. Deploy it in eks
+1. Check it works
+1. Why Travis does not put it to put the frontend too
+
 CI/CD deployment of Udagram refactored as microservices. 
 
 ***Credits***
@@ -111,7 +115,6 @@ It is shown how the three services are deployed succesfully.
 ![Local](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/Local.png)
 
 - [x] ***Build and run a container image using Docker***: Project includes Dockerfiles to successfully create Docker images for /feed, /user backends, project frontend, and reverse proxy. Screenshot of DockerHub shows the images.
-
 
 
 Independent Releases and Deployments
