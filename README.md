@@ -177,6 +177,25 @@ THen it is included a .travis to run the steps out of the cluster
 
 To do so it is created some kubernetes arquitecture with a reverse proxy and services and a config map
 
+    ```bash
+
+eksctl create cluster \
+ --name c2 \
+ --version 1.16 \
+ --without-nodegroup
+    ```
+    
+    ```bash
+eksctl create nodegroup \
+  --cluster c2 \
+  --region us-west-2 \
+  --name my-mng \
+  --node-type m5.large \
+  --nodes 3 \
+  --nodes-min 2 \
+  --nodes-max 4 
+    ```
+
 # What I did: rubric
 
 Containers and Microservices
