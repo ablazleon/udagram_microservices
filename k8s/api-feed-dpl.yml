@@ -2,18 +2,18 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    service: api-feed
-  name: api-feed
+    service: udagram-api-feed
+  name: udagram-api-feed
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        service: api-feed
+        service: udagram-api-feed
     spec:
       containers:
-      - image: vikrambedi/rest-api-feed
-        name: backend-feed
+      - image: ablazleon/udagram-api-feed
+        name: udagram-api-feed
         imagePullPolicy: Always  
         resources:
           requests:
