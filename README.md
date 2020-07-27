@@ -202,10 +202,7 @@ Service Orchestration with Kubernetes
 
 THe deployment followed this configuration:
 
-graph TD
-  A[Client] --> B[Load Balancer]
-  B --> C[Server01]
-  B --> D[Server02]
+[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgQVtDbGllbnRdIC0tPiBCW0xvYWQgQmFsYW5jZXIgLSBObmdpeF1cbiAgQiAtLT4gQ1tmcm9udGVuZF1cbiAgQiAtLT4gRFt1c2Vycy1hcGldXG4gIEIgLS0-IEVbZmVlZC1hcGldXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggTFJcbiAgQVtDbGllbnRdIC0tPiBCW0xvYWQgQmFsYW5jZXIgLSBObmdpeF1cbiAgQiAtLT4gQ1tmcm9udGVuZF1cbiAgQiAtLT4gRFt1c2Vycy1hcGldXG4gIEIgLS0-IEVbZmVlZC1hcGldXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)
 
 - A screenshots of kubectl commands show the Frontend and API projects deployed in Kubernetes.
 
