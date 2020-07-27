@@ -104,6 +104,77 @@ Then, asking to some friends they told they are now using Jenkins X beacuse it a
 
 ![cicd2](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/cicd2.png)
 
+### Steps
+
+1 Using jenkins X => a problem in an environment, on't know which beacuse the name is so long so it is create another cluster in eks with a shorter name
+
+#### 1.1 Set up cluster
+#### 1.2 Set up the service
+#### 1.3 Develop the service
+
+#### 2. With k8s alone
+
+#### 1 Set up cluster
+
+From https://jenkins-x.io/docs/install-setup/install-binarls, jx is installed.
+
+Then, I created an eks cluster, but as the costs grows so quickly I decided to choose instead gke, to the tests and deploy the final in eks.
+
+    ```bash
+    jx create cluster gke --cluster-name mycluster --skip-installation --skip-login=true
+    ```
+
+    ```bash
+    jx create cluster eks --cluster-name mycluster --skip-installation 
+    ```
+
+Then it is copied a jx-requirments.yml and modified it accordingly.
+
+    ```bash
+    jx boot 
+    ```
+
+To check it works, it is created a quickstart. Then it is checked that the reverse proxy is a service.
+
+    ```bash
+    kubectl get svc
+    ```
+
+#### 2 Set up the service
+
+First, both services are deployed independently.
+
+Then, both the v0 microservices are imported and took to production.
+
+    ```bash
+    jx import --url https://github.com/ablazleon/udagram-api-users.git
+    jx import --url https://github.com/ablazleon/udagram-api-feed.git
+    jx import --url https://github.com/ablazleon/udagram-frontend.git
+    jx get app
+    ```
+It is config the env values in the dev environmanet in a values.yml file
+
+In this photo it is shown how both microservices work.
+
+
+    ```bash
+    jx promote ---env production
+    ```
+
+#### 3 Develop the service
+
+From there it is refactored the microservices in dev enviroment, importing the microservice feed and removing the users functionality from the the other microservice.
+
+Here it is icnlude that these works.
+
+THen it is included a .travis to run the steps out of the cluster
+
+---------------------
+
+#### 2. With k8s alone
+
+To do so it is created some kubernetes arquitecture with a reverse proxy and services and a config map
+
 # What I did: rubric
 
 Containers and Microservices
@@ -129,7 +200,12 @@ Service Orchestration with Kubernetes
 
 - [x] ***Deploy microservices using a Kubernetes cluster on AWS***: 
 
-![Used eksctl]
+THe deployment followed this configuration:
+
+graph TD
+  A[Client] --> B[Load Balancer]
+  B --> C[Server01]
+  B --> D[Server02]
 
 - A screenshots of kubectl commands show the Frontend and API projects deployed in Kubernetes.
 
