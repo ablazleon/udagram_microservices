@@ -102,7 +102,9 @@ Then, asking to some friends they told they are now using Jenkins X beacuse it a
 
 ### Steps
 
-1 Using jenkins X => a problem in an environment, on't know which beacuse the name is so long so it is create another cluster in eks with a shorter name
+1 Using jenkins X => a problem in an environment: services seems unaccesible and also the frotend=> so it is accessed with k8s alone
+
+
 
 #### 1.1 Set up cluster
 #### 1.2 Set up the service
