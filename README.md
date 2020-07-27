@@ -178,7 +178,6 @@ THen it is included a .travis to run the steps out of the cluster
 To do so it is created some kubernetes arquitecture with a reverse proxy and services and a config map
 
     ```bash
-
 eksctl create cluster \
  --name c2 \
  --version 1.16 \
