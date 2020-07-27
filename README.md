@@ -104,7 +104,11 @@ Then, asking to some friends they told they are now using Jenkins X beacuse it a
 
 1 Using jenkins X => a problem in an environment: services seems unaccesible and also the frotend=> so it is accessed with k8s alone
 
+![GKE-logs](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/GKE-logs.png)
 
+![GKE-logs-env](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/GKE-logs-env.png)
+
+![Frontend-gke-problem](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/Frontend-gke-problem.png)
 
 #### 1.1 Set up cluster
 #### 1.2 Set up the service
