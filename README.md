@@ -190,16 +190,23 @@ To do so it is created some kubernetes arquitecture with a reverse proxy and ser
      --without-nodegroup
     ```
     
+    https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html
+    
     ```bash
     eksctl create nodegroup \
-      --cluster c2 \
-      --region us-west-2 \
-      --name my-mng \
-      --node-type m5.large \
-      --nodes 3 \
-      --nodes-min 2 \
-      --nodes-max 4 
+    --cluster default \
+    --version auto \
+    --name standard-nodes \
+    --node-type t3.medium \
+    --node-ami auto \
+    --nodes 3 \
+    --nodes-min 1 \
+    --nodes-max 4
     ```
+    
+Then it is applied the deplyoment for the forntend, then the service and check witht the port forward if that works.
+
+
 
 # What I did: rubric
 
