@@ -102,13 +102,17 @@ Then, asking to some friends they told they are now using Jenkins X beacuse it a
 
 ### Steps
 
-1 Using jenkins X => a problem in an environment: services seems unaccesible and also the frotend=> so it is accessed with k8s alone
+1 Using jenkins X => a problem in an environment: services seems unaccesible and also the frontend, as if there weren't enough memory=> so it is accessed with k8s alone. Previuosly it is tried with eks, but the wsl gives errors with jx boot and it is not possible to create a cluster from an ubuntu server
 
 ![GKE-logs](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/GKE-logs.png)
 
 ![GKE-logs-env](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/GKE-logs-env.png)
 
 ![Frontend-gke-problem](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/Frontend-gke-problem.png)
+
+![ProblemWSL](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/ProblemWSL.png)
+
+![ubuntuFailedJxCreateCluster](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/ubuntuFailedJxCreateCluster.png)
 
 #### 1.1 Set up cluster
 #### 1.2 Set up the service
