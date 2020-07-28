@@ -102,7 +102,9 @@ Then, asking to some friends they told they are now using Jenkins X beacuse it a
 
 ### Steps
 
-1 Using jenkins X => a problem in an environment: services seems unaccesible and also the frontend, as if there weren't enough memory=> so it is accessed with k8s alone. Previuosly it is tried with eks, but the wsl gives errors with jx boot and it is not possible to create a cluster from an ubuntu server
+1 Using jenkins X => a problem in an environment in gke: services seems unaccesible and also the frontend, as if there weren't enough memory=> so it is accessed with k8s alone. 
+
+Previuosly it is tried with eks, but the wsl gives errors with jx boot and it is not possible to create a cluster from an ubuntu server. So it is created the cluster in wsl and use "aws eks --region us-west-2 update-kubeconfig --name c". But, it is obtained a "error: You must be logged in to the server (Unauthorized)"
 
 ![GKE-logs](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/GKE-logs.png)
 
