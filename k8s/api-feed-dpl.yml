@@ -1,11 +1,14 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     service: udagram-api-feed
   name: udagram-api-feed
 spec:
-  replicas: 1
+  replicas: 2
+  selector:
+  matchLabels:
+    service: udagram-api-feed
   template:
     metadata:
       labels:
