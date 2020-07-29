@@ -224,7 +224,15 @@ Then it is applied the deplyoment for the forntend, then the service and check w
     
     I'm going to set the congig map
     
+      ```bash
+    kubectl apply -f configMap.yml   
+     
+    kubectl apply -f api-users-dpl.yml
+    kubectl apply -f api-users-svc.yml 
     
+    kubectl apply -f api-feed-dpl.yml
+    kubectl apply -f api-feed-svc.yml 
+    ```  
 
 # What I did: rubric
 
@@ -262,7 +270,7 @@ THe deployment followed this configuration:
 
 - [x] ***Use a reverse proxy to direct requests to the appropriate backend***: Screenshot of Kubernetes services shows a reverse proxy
 
-It is showed the serverse proxy.
+It is showed the reverse proxy.
 
 ![Reverse proxy](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/nginex-reverserpoxy.png)
 
