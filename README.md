@@ -211,6 +211,21 @@ To do so it is created some kubernetes arquitecture with a reverse proxy and ser
     
 Then it is applied the deplyoment for the forntend, then the service and check witht the port forward if that works.
 
+    ```bash
+    kubectl apply -f frontend-dpl.yml
+    kubectl apply -f frontend-svc.yml
+    ```
+    
+    ```bash
+    kubectl get po
+    kubectl port-forward pod/PODNAME 8100:80 
+    http://localhost:8100
+    ```
+    
+    I'm going to set the congig map
+    
+    
+
 # What I did: rubric
 
 Containers and Microservices
@@ -222,7 +237,6 @@ It is shown how the three services are deployed succesfully.
 ![Local](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/Local.png)
 
 - [x] ***Build and run a container image using Docker***: Project includes Dockerfiles to successfully create Docker images for /feed, /user backends, project frontend, and reverse proxy. Screenshot of DockerHub shows the images.
-
 
 Independent Releases and Deployments
 
