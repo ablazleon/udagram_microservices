@@ -15,5 +15,5 @@ spec:
         paths:
           - path: /*
             backend:
-              serviceName: "udagram-frontend"
+              serviceName: "frontend"
               servicePort: 80
