@@ -233,7 +233,55 @@ Then it is applied the deplyoment for the forntend, then the service and check w
     kubectl apply -f api-feed-dpl.yml
     kubectl apply -f api-feed-svc.yml 
     ```  
+    
+    Finally, a reverse-proxy is set up.
+    
+    https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html#:~:text=EKSUser%20Guide-,ALB%20Ingress%20Controller%20on%20Amazon%20EKS,ingress.class:%20alb%20annotation.
+    
+    ```bash
+    eksctl utils associate-iam-oidc-provider \
+    --region us-west-2 \
+    --cluster c1 \
+    --approve
+       
+    curl -o iam-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/v1.1.8/docs/examples/iam-policy.json
+    
+    aws iam create-policy \
+    --policy-name ALBIngressControllerIAMPolicy \
+    --policy-document file://iam-policy.json
+    
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/v1.1.8/docs/examples/rbac-role.yaml
+    
+    eksctl create iamserviceaccount \
+    --region us-west-2 \
+    --name alb-ingress-controller \
+    --namespace kube-system \
+    --cluster c1 \
+    --attach-policy-arn arn:aws:iam::764217278004:policy/ALBIngressControllerIAMPolicy \
+    --override-existing-serviceaccounts \
+    --approve
+    
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/v1.1.8/docs/examples/alb-ingress-controller.yaml
+    
+    kubectl edit deployment.apps/alb-ingress-controller -n kube-system
+    
+    spec:
+      containers:
+      - args:
+        - --ingress-class=alb
+        - --cluster-name=c1
+    
+    kubectl get pods -n kube-system  
+    ```  
+    
+It's checked that this ing controller is created.
 
+    ```bash
+    kubectl apply -f ingCtl.yml
+    ```
+    
+    
+    
 # What I did: rubric
 
 Containers and Microservices
