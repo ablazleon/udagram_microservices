@@ -1,0 +1,19 @@
+# From https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: "udagram-ingress"
+  namespace: "default"
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+  labels:
+    service: udagram-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: "udagram-frontend"
+              servicePort: 80
