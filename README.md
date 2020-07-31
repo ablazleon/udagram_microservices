@@ -295,7 +295,8 @@ It's checked that this ing controller is created.
         
     kubectl apply -f ingCtl.yml
     ```
-    
+As it appears a sequelize error it is ccheked with kube command if the environemnt values are exported. 
+
 # What I did: rubric
 
 Containers and Microservices
