@@ -297,6 +297,10 @@ It's checked that this ing controller is created.
     ```
 As it appears a sequelize error it is ccheked with kube command if the environemnt values are exported. 
 
+    ```bash
+    kubectl exec PODNAME
+    ```
+
 # What I did: rubric
 
 Containers and Microservices
