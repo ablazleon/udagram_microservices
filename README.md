@@ -279,8 +279,22 @@ It's checked that this ing controller is created.
     ```bash
     kubectl apply -f ingCtl.yml
     ```
+ So the commands to create the deployment are the following:
+ 
+     ```bash
+    kubectl apply -f frontend-dpl.yml
+    kubectl apply -f frontend-svc.yml
     
+    kubectl apply -f configMap.yml   
+     
+    kubectl apply -f api-users-dpl.yml
+    kubectl apply -f api-users-svc.yml 
     
+    kubectl apply -f api-feed-dpl.yml
+    kubectl apply -f api-feed-svc.yml 
+        
+    kubectl apply -f ingCtl.yml
+    ```
     
 # What I did: rubric
 
