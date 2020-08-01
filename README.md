@@ -329,7 +329,7 @@ Service Orchestration with Kubernetes
 
 THe deployment followed this configuration:
 
-[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgQVtDbGllbnRdIC0tPiBCW0xvYWQgQmFsYW5jZXIgLSBObmdpeF1cbiAgQiAtLT4gQ1tmcm9udGVuZF1cbiAgQiAtLT4gRFt1c2Vycy1hcGldXG4gIEIgLS0-IEVbZmVlZC1hcGldXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggTFJcbiAgQVtDbGllbnRdIC0tPiBCW0xvYWQgQmFsYW5jZXIgLSBObmdpeF1cbiAgQiAtLT4gQ1tmcm9udGVuZF1cbiAgQiAtLT4gRFt1c2Vycy1hcGldXG4gIEIgLS0-IEVbZmVlZC1hcGldXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)
+<img src="http://yuml.me/diagram/scruffy/class/[Client]->[Ingress Controller (Nginx) : frontend]->[frontend :80],[Client]->[Ingress Controller (Nginx) : frontend]->[api-users :80], [Client]->[Ingress Controller (Nginx) : frontend]->[api-feed :80]" >
 
 - A screenshots of kubectl commands show the Frontend and API projects deployed in Kubernetes.
 
