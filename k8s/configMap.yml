@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 data:
   POSTGRES_USERNAME: udagramrauldev
-  POSTGRES_PASSWORD: scomisinirac
+  POSTGRES_PASSWORD: password
   POSTGRES_HOST: udagramrauldev.cshzlyyxeprn.us-west-2.rds.amazonaws.com
   POSTGRES_DB: udagramrauldev
   AWS_BUCKET: udagram-ablazleon-dev
