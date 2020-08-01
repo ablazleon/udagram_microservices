@@ -2,6 +2,10 @@
 
 CI/CD deployment of Udagram refactored as microservices. 
 
+https://github.com/ablazleon/udagram-frontend
+https://github.com/ablazleon/udagram-api-users
+https://github.com/ablazleon/udagram-api-feed
+
 ***Credits***
 Udacity Cloud Developer Nanodegree Program
 
