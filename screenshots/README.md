@@ -99,3 +99,34 @@ Session Affinity:         None
 External Traffic Policy:  Cluster
 Events:                   <none>
 ```
+
+aluche@DESKTOP-F9O2D4O:/mnt/c/Users/ablaz/PycharmProjects/udagram_microservices/k8s$ kubectl autoscale deployment frontend --cpu-percent=70 --max=4
+horizontalpodautoscaler.autoscaling/frontend autoscaled
+aluche@DESKTOP-F9O2D4O:/mnt/c/Users/ablaz/PycharmProjects/udagram_microservices/k8s$ kubectl get hpa
+NAME       REFERENCE             TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+frontend   Deployment/frontend   <unknown>/70%   1         4         0          11s
+aluche@DESKTOP-F9O2D4O:/mnt/c/Users/ablaz/PycharmProjects/udagram_microservices/k8s$ kubectl describe hpa
+Name:                                                  frontend
+Namespace:                                             default
+Labels:                                                <none>
+Annotations:                                           <none>
+CreationTimestamp:                                     Sat, 01 Aug 2020 14:43:28 +0200
+Reference:                                             Deployment/frontend
+Metrics:                                               ( current / target )
+  resource cpu on pods  (as a percentage of request):  <unknown> / 70%
+Min replicas:                                          1
+Max replicas:                                          4
+Deployment pods:                                       2 current / 0 desired
+Conditions:
+  Type           Status  Reason                   Message
+  ----           ------  ------                   -------
+  AbleToScale    True    SucceededGetScale        the HPA controller was able to get the target's current scale
+  ScalingActive  False   FailedGetResourceMetric  the HPA was unable to compute the replica count: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server could not find the requested resource (get pods.metrics.k8s.io)
+Events:
+  Type     Reason                        Age                From                       Message
+  ----     ------                        ----               ----                       -------
+  Warning  FailedGetResourceMetric       10s (x3 over 40s)  horizontal-pod-autoscaler  unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server could not find the requested resource (get pods.metrics.k8s.io)
+  Warning  FailedComputeMetricsReplicas  10s (x3 over 40s)  horizontal-pod-autoscaler  invalid metrics (1 invalid out of 1), first error is: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server could not find the requested resource (get pods.metrics.k8s.io)
+aluche@DESKTOP-F9O2D4O:/mnt/c/Users/ablaz/PycharmProjects/udagram_microservices/k8s$
+  
+  
