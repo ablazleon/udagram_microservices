@@ -294,12 +294,19 @@ It's checked that this ing controller is created.
     kubectl apply -f api-feed-svc.yml 
         
     kubectl apply -f ingCtl.yml
+    
+    kubectl autoscale deployment frontend --cpu-percent=70 --max=4
     ```
 As it appears a sequelize error it is ccheked with kube command if the environemnt values are exported. 
 
     ```bash
     kubectl exec PODNAME
-    ```
+
+```
+
+It is cheked this is beacuse the databse was not configure to accept all ips
+
+THe problem is why in local it is connected to the port 8080, but there not.
 
 # What I did: rubric
 
@@ -332,16 +339,24 @@ THe deployment followed this configuration:
 <img src="http://yuml.me/diagram/scruffy/class/[Client]->[Ingress Controller (Nginx) : frontend]->[frontend :80],[Client]->[Ingress Controller (Nginx) : frontend]->[api-users :80], [Client]->[Ingress Controller (Nginx) : frontend]->[api-feed :80]" >
 
 - A screenshots of kubectl commands show the Frontend and API projects deployed in Kubernetes.
+Url
+
+http://06b9df6f-default-udagramin-c386-517150989.us-west-2.elb.amazonaws.com
+
+![Travis](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/frontend-register.png)
+
 
 - The output of kubectl get pods indicates that the pods are running successfully with the STATUS value Running.
 
+THese logs are icnluded in the readme.md of the screenshot folder
+
 - The output of kubectl describe services does not expose any sensitive strings such as database passwords.
+
+In readme.md of screen hot folder is included these logs
 
 - [x] ***Use a reverse proxy to direct requests to the appropriate backend***: Screenshot of Kubernetes services shows a reverse proxy
 
-It is showed the reverse proxy.
-
-![Reverse proxy](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/nginex-reverserpoxy.png)
+THese logs are icnluded in the readme.md of the screenshot folder
 
 - [x] ***Configure scaling and self-healing for each service***: 
 
@@ -349,6 +364,10 @@ It is showed the reverse proxy.
 
 - Screenshot of Kubernetes cluster of command kubectl describe hpa has autoscaling configured with CPU metrics.
 
+THese logs are icnluded in the readme.md of the screenshot folder
+
 Debugging, Monitoring, and Logging
 
 - [x] ***Use logs to capture metrics for debugging a microservices deployment***: Screenshot of one of the backend API pod logs indicates user activity that is logged when an API call is made.
+
+THese logs are icnluded in the readme.md of the screenshot folder
