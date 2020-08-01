@@ -313,6 +313,8 @@ It is shown how the three services are deployed succesfully.
 
 - [x] ***Build and run a container image using Docker***: Project includes Dockerfiles to successfully create Docker images for /feed, /user backends, project frontend, and reverse proxy. Screenshot of DockerHub shows the images.
 
+![Dockerhub](https://github.com/ablazleon/udagram_microservices/blob/master/screenshots/DeploymentPipeline_DockerHub.png)
+
 Independent Releases and Deployments
 
 - [x] ***Use Travis to build a CI/CD pipeline***: Project includes a .travis.yml file. Screenshot of the Travis CI interface shows a successful build and deploy job.
